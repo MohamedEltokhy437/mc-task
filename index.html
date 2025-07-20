@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>McDonald's</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/yourfontawesomekit.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#home">
+        <img src="https://1000logos.net/wp-content/uploads/2017/03/McDonalds-logo.png" alt="McDonald's Logo" height="40" class="me-2">
+        <span class="fw-bold" style="color: #DA291C; font-family: 'Baloo 2', cursive;">McDonald's</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#menu">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Find Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-section d-flex align-items-center justify-content-center text-center">
+    <div class="container">
+      <img src="./images/bigmack.png" alt="Big Mac" class="img-fluid rounded shadow-lg mb-4 hero-img">
+      <h1 class="display-3 fw-bold mb-3" style="color: #DA291C; font-family: 'Baloo 2', cursive;">I'm Lovin' It</h1>
+      <p class="lead mb-4" style="color: #FFC72C; font-size: 1.5rem;">Delicious moments, made to order.</p>
+      <a href="#menu" class="btn btn-warning btn-lg fw-bold px-5 py-3">See Our Menu</a>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5" style="color: #DA291C; font-family: 'Baloo 2', cursive;">Our Menu</h2>
+      <div class="row g-4">
+        <!-- Burger Card -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="./images/bigmack.png" class="card-img-top" alt="Big Mac">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Big Mac</h5>
+              <p class="card-text">The iconic burger with two beef patties, special sauce, lettuce, cheese, pickles, and onions.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="fw-bold text-danger">$4.99</span>
+                <button class="btn btn-outline-warning btn-sm" onclick="showDetails('Big Mac')">Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Fries Card -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="./images/mcdonalds-fries-medium-april-promo_nutrition-calculator-tile.avif" class="card-img-top" alt="Fries">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">World Famous Fries</h5>
+              <p class="card-text">Crispy, golden fries made from premium potatoes. A perfect side for any meal.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="fw-bold text-danger">$2.49</span>
+                <button class="btn btn-outline-warning btn-sm" onclick="showDetails('Fries')">Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Drink Card -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="./images/mcd-coke-832x822-ry-0723_nutrition-calculator-tile.avif" class="card-img-top" alt="Coke">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Coca-Cola&reg;</h5>
+              <p class="card-text">Classic, refreshing Coca-Cola&reg; served ice cold. The perfect drink to complement your meal.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="fw-bold text-danger">$1.99</span>
+                <button class="btn btn-outline-warning btn-sm" onclick="showDetails('Coke')">Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Add more menu items as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal for Item Details -->
+  <div class="modal fade" id="itemModal" tabindex="-1" aria-labelledby="itemModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="itemModalLabel">Item Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="modalBody">
+          <!-- Details will be injected by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Find Us Section -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4" style="color: #DA291C; font-family: 'Baloo 2', cursive;">Find Us</h2>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="ratio ratio-16x9 rounded shadow">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.9630579153169!3d-37.816279779751554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d43f1f6e8b1%3A0x5045675218ce6e0!2sMcDonald%27s!5e0!3m2!1sen!2sau!4v1614644081234!5m2!1sen!2sau" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <form class="bg-white p-4 rounded shadow">
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-danger w-100">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <div class="mb-3 mb-md-0">
+        <img src="https://1000logos.net/wp-content/uploads/2017/03/McDonalds-logo.png" alt="McDonald's Logo" height="30" class="me-2">
+        <span>&copy; 2024 McDonald's. All rights reserved.</span>
+      </div>
+      <div>
+        <a href="#" class="text-white me-3"><i class="fab fa-facebook fa-lg"></i></a>
+        <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
+        <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+        <span class="ms-3">Contact: info@mcdonalds.com | (800) 244-6227</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html> 

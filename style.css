@@ -1,0 +1,87 @@
+body {
+  min-height: 100vh;
+  background: linear-gradient(to right, #DA291C, #FFC72C);
+  font-family: 'Baloo 2', 'Arial Rounded MT Bold', Arial, sans-serif;
+  color: #222;
+}
+
+.hero-section {
+  min-height: 80vh;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-img {
+  max-width: 400px;
+}
+
+.btn-warning {
+  background-color: #FFC72C;
+  border: none;
+  color: #DA291C;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: background 0.2s;
+  font-family: 'Baloo 2', cursive;
+}
+.btn-warning:hover {
+  background-color: #DA291C;
+  color: #fff;
+}
+
+.card-title {
+  color: #DA291C;
+  font-family: 'Baloo 2', cursive;
+}
+
+.card {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.card-img-top{
+background-color: white;
+}
+
+footer {
+  background: #222;
+  color: #fff;
+}
+
+footer img {
+  background: #fff;
+  border-radius: 50%;
+  padding: 2px;
+}
+
+footer a {
+  color: #FFC72C;
+  transition: color 0.2s;
+}
+footer a:hover {
+  color: #DA291C;
+}
+
+.navbar-brand span {
+  font-size: 1.5rem;
+  font-family: 'Baloo 2', cursive;
+}
+
+.navbar {
+  border-bottom: 3px solid #FFC72C;
+}
+
+.form-control:focus {
+  border-color: #FFC72C;
+  box-shadow: 0 0 0 0.2rem rgba(255,199,44,.25);
+}
+
+@media (max-width: 768px) {
+  .hero-img {
+    max-width: 90vw;
+  }
+  .hero-section {
+    min-height: 60vh;
+  }
+} 
